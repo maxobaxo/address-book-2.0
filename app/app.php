@@ -37,14 +37,14 @@
 
     $app->get('/update', function() use ($app) {
         $all_contacts = Contact::getAll();
-
         for ($i = 0; $i < count($all_contacts); $i++) {
             if ($i == $all_contacts[$i]->getIndex()) {
-                $edit_contact = $all_contacts[$i];
-            };
+                var_dump($all_contacts[$i]);
+            } else {
+                var_dump('lose lose lose');
+            }
         }
-        
-        return $app['twig']->render('update.html.twig', array('edit_contact' => $edit_contact));
+        return $app['twig']->render('update.html.twig');
     });
 
     return $app;

@@ -57,7 +57,7 @@
                 <div class='col-md-12'>
                     {% for contact in contacts %}
                         <div class='well'>
-                            <form action='/update'>
+                            <form action='/update' name='{{ contact.getIndex() }}'>
                                 <h3> {{ contact.getLastName }}, {{ contact.getFirstName }} </h3>
                                 <p>
                                     <em>Address:</em> <br> {{ contact.getStreet }} <br>
@@ -65,7 +65,7 @@
                                     <em>Mobile:</em> {{ contact.getMobile }} <br>
                                     <em>Email:</em> {{ contact.getEmail }}
                                 </p>
-                                <button type='submit' name='{{ contact.getIndex }}' class='btn'>Edit</button>
+                                <button type='submit' class='btn'>Edit</button>
                             </form>
                         </div>
                     {% endfor %}
