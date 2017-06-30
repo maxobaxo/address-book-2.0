@@ -16,10 +16,10 @@
     $app->get('/', function() use ($app) {
         $all_contacts = Contact::getAll();
         sort($all_contacts);
-        // for ($i = 0; $i < count($all_contacts); $i++) {
-        //     $all_contacts[$i]->setIndex($i);
-        //     var_dump($all_contacts[$i]->getFirstName());
-        // }
+        for ($i = 0; $i < count($all_contacts); $i++) {
+            $all_contacts[$i]->setIndex($i);
+            var_dump($all_contacts[$i]->getFirstName());
+        }
         return $app['twig']->render('home.html.twig', array('contacts' => $all_contacts));
     });
 
@@ -43,7 +43,7 @@
                 $edit_contact = $all_contacts[$i];
             };
         }
-
+        
         return $app['twig']->render('update.html.twig', array('edit_contact' => $edit_contact));
     });
 

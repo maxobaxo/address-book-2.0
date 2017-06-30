@@ -21,7 +21,7 @@
             $this->zip = $zip;
             $this->mobile = $mobile;
             $this->email = $email;
-            // $this->index = (float) '';
+            $this->index = (float) '';
         }
 
         function setFirstName($first_name)
@@ -111,13 +111,13 @@
             return $this->mobile;
         }
 
-        // function setIndex($i) {
-        //     $this->index = $i;
-        // }
-        //
-        // function getIndex() {
-        //     return $this->index;
-        // }
+        function setIndex($i) {
+            $this->index = $i;
+        }
+
+        function getIndex() {
+            return $this->index;
+        }
 
         function save()
         {
