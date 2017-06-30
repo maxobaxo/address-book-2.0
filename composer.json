@@ -1,6 +1,6 @@
 {
     "require": {
-        "silex/silex": "~2.0",
-        "twig/twig": "~1.0"
+        "Silex/Silex": "~1.1",
+        "Twig/Twig": "~1.0"
     }
 }

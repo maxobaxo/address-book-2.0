@@ -6,14 +6,15 @@
 <body>
     <div class='container'>
         <h1>Address Book</h1>
-        <h2>You have added a new contact!</h2>
-        <h3> {{ new_contact.getLastName }}, {{ new_contact.getFirstName }} </h3>
-        <p>
-            Address: {{ new_contact.getStreet }} <br>
-            {{ new_contact.getCity }}, {{ new_contact.getState }} | {{ new_contact.getZip }} <br>
-            Mobile: {{ new_contact.getEmail }} <br>
-            Email: {{ new_contact.getEmail }}
-        </p>
+            <h2>You have added a new contact!</h2>
+            <h3> {{ new_contact.getLastName }}, {{ new_contact.getFirstName }} </h3>
+            <p>
+                Address: <br>
+                {{ new_contact.getStreet }} <br>
+                {{ new_contact.getCity }}, {{ new_contact.getState }} | {{ new_contact.getZip }} <br>
+                Mobile: {{ new_contact.getEmail }} <br>
+                Email: {{ new_contact.getEmail }}
+            </p>
         <h3><a href='/'>See All Contacts</a></h3>
     </div>
 </body>
