@@ -1,6 +1,5 @@
 <?php
     class Contact {
-
         private $first_name;
         private $last_name;
         private $street_num;
@@ -22,40 +21,49 @@
             $this->$email = $email;
         }
 
-        function setFirstName($first_name) {
-            $this->$first_name = $first_name;
+        function setFirstName($first_name)
+        {
+            $this->$first_name = (string) $first_name;
         }
 
-        function getFirstName() {
+        function getFirstName()
+        {
             return $this->$first_name;
         }
 
-        function setLastName($last_name) {
-            $this->$last_name = $last_name;
+        function setLastName($last_name)
+        {
+            $this->$last_name = (string) $last_name;
         }
 
-        function getLastName() {
+        function getLastName()
+        {
             return $this->$last_name;
         }
 
-        function setStreet($street_num) {
-            $this->$street_num = $street_num;
+        function setStreet($street_num)
+        {
+            $this->$street_num = (string) $street_num;
         }
 
-        function getStreet() {
+        function getStreet()
+        {
             return $this->$street_num;
         }
 
-        function setCity($city) {
-            $this->$city = $city;
+        function setCity($city)
+        {
+            $this->$city = (string) $city;
         }
 
-        function getCity() {
+        function getCity()
+        {
             return $this->$city;
         }
 
-        function setState($state) {
-            $this->$state = $state;
+        function setState($state)
+        {
+            $this->$state = (string) $state;
         }
 
         function getState() {
@@ -63,26 +71,30 @@
         }
 
         function setZip($zip) {
-            $this->$zip = $zip;
+            $this->$zip = (string) $zip;
         }
 
         function getZip() {
             return $this->$zip;
         }
 
-        function setEmail($email) {
-            $this->$email = $email;
+        function setEmail($email)
+        {
+            $this->$email = (string) $email;
         }
 
-        function getEmail() {
+        function getEmail()
+        {
             return $this->$email;
         }
 
-        function setMobile($mobile) {
-            $this->$mobile = $mobile;
+        function setMobile($mobile)
+        {
+            $this->$mobile = (string) $mobile;
         }
 
-        function getMobile() {
+        function getMobile()
+        {
             return $this->$mobile;
         }
 
@@ -90,11 +102,13 @@
             array_push($_SESSION['contacts'], $this);
         }
 
-        static function getAll() {
+        static function getAll()
+        {
             return $_SESSION['contacts'];
         }
 
-        static function deleteAll() {
+        static function deleteAll()
+        {
             $_SESSION['contacts'] = array();
         }
     }

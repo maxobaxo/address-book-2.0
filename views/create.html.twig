@@ -1,0 +1,22 @@
+<html>
+<head>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <title>Address Book: New Contact</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Address Book</h1>
+        <h2>You have added a new contact!</h2>
+        <h3> {{ new_contact.getLastName }}, {{ new_contact.getFirstName }} </h3>
+        <p>
+            Address: {{ new_contact.getStreet }} <br>
+            {{ new_contact.getCity }}, {{ new_contact.getState }} | {{ new_contact.getZip }} <br>
+            Mobile: {{ new_contact.getEmail }} <br>
+            Email: {{ new_contact.getEmail }}
+        </p>
+        <form action="/">
+            <button type="submit" name="btn">See All Contacts</button>
+        </form>
+    </div>
+</body>
+</html>
