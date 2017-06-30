@@ -20,7 +20,7 @@
             $this->$zip = $zip;
             $this->$mobile = $mobile;
             $this->$email = $email;
-        };
+        }
 
         function setFirstName($first_name) {
             $this->$first_name = $first_name;

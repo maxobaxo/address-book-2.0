@@ -13,8 +13,8 @@
     $app->register(new Silex\Provider\TwigServiceProvider(), array('twig.path' => __DIR__.'/../views'
     ));
 
-    $app->get('/', function() {
-        return $app['twig']-render('home.html.twig');
+    $app->get('/', function() use ($app) {
+        return $app['twig']->render('home.html.twig', array('contacts' => Contact::getAll()));
     });
 
     return $app;
