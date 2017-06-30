@@ -110,15 +110,7 @@
         {
             return $this->mobile;
         }
-
-        function setIndex($i) {
-            $this->index = $i;
-        }
-
-        function getIndex() {
-            return $this->index;
-        }
-
+        
         function save()
         {
             array_push($_SESSION['contacts'], $this);

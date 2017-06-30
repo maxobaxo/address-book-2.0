@@ -3,12 +3,12 @@
     <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
     <title>Address Book 2.0</title>
 </head>
-<body>
+<body class='bg-success'>
     <div class='container'>
         <div class='jumbotron'>
             <h1>Address Book</h1>
+            <h2>Add a new contact below:</h2>
         </div>
-        <h2>Add a new contact below:</h2>
         <form action='/create_contact' method='post'>
             <div class='row'>
                 <div class='col-md-4'>
@@ -52,12 +52,13 @@
         </form>
 
         {% if contacts is not empty %}
-            <h2>Contacts:</h2>
+            <div class="well">
+                <h2>Contacts:</h2>
+            </div>
             <div class='row'>
                 <div class='col-md-12'>
                     {% for contact in contacts %}
                         <div class='well'>
-                            <form action='/update'>
                                 <h3> {{ contact.getLastName }}, {{ contact.getFirstName }} </h3>
                                 <p>
                                     <em>Address:</em> <br> {{ contact.getStreet }} <br>
@@ -65,8 +66,6 @@
                                     <em>Mobile:</em> {{ contact.getMobile }} <br>
                                     <em>Email:</em> {{ contact.getEmail }}
                                 </p>
-                                <button type='submit' name='{{ contact.getIndex }}' class='btn'>Edit</button>
-                            </form>
                         </div>
                     {% endfor %}
                 </div>

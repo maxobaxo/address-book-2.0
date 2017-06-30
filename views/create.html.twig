@@ -1,27 +1,29 @@
 <html>
 <head>
     <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
-    <title>Address Book: New Contact</title>
+    <title>Address Book 2.0</title>
 </head>
-<body>
+<body class='bg-success'>
     <div class='container'>
         <div class="jumbotron">
             <h1>Address Book</h1>
+            <h2>You have added a new contact!</h2>
         </div>
-        <h2>You have added a new contact!</h2>
-        <h3> {% if new_contact.getLastName is not empty %} {{ new_contact.getLastName }}, {% endif %}
-             {% if new_contact.getMidInit is not empty %}{{ new_contact.getMidInit }} {% endif %}
-             {% if new_contact.getFirstName is not empty %} {{ new_contact.getFirstName }} {% endif %} </h3>
-        <p>
-            Address: <br>
-            {% if new_contact.getStreet is not empty %} {{ new_contact.getStreet }} <br> {% endif %}
-
-            {% if new_contact.getCity is not empty %} {{ new_contact.getCity }}, {% endif %}
-            {% if new_contact.getState is not empty %} {{ new_contact.getState }} | {% endif %}
-            {% if new_contact.getZip is not empty %} {{ new_contact.getZip }} <br> {% endif %}
-            {% if new_contact.getMobile is not empty %} Mobile: {{ new_contact.Mobile }} <br> {% endif %}
-            {% if new_contact.getEmail is not empty %} Email: {{ new_contact.getEmail }} {% endif %}
-        </p>
+        <div class="well">
+            <h3> {% if new_contact.getLastName is not empty %} {{ new_contact.getLastName }}, {% endif %}
+                {% if new_contact.getMidInit is not empty %}{{ new_contact.getMidInit }} {% endif %}
+                {% if new_contact.getFirstName is not empty %} {{ new_contact.getFirstName }} {% endif %} </h3>
+                <p>
+                    {% if new_contact.getStreet is not empty %}
+                    Address: <br> {{ new_contact.getStreet }} <br>
+                    {% endif %}
+                    {% if new_contact.getCity is not empty %} {{ new_contact.getCity }}, {% endif %}
+                    {% if new_contact.getState is not empty %} {{ new_contact.getState }} | {% endif %}
+                    {% if new_contact.getZip is not empty %} {{ new_contact.getZip }} <br> {% endif %}
+                    {% if new_contact.getMobile is not empty %} Mobile: {{ new_contact.Mobile }} <br> {% endif %}
+                    {% if new_contact.getEmail is not empty %} Email: {{ new_contact.getEmail }} {% endif %}
+                </p>
+        </div>
         <form action='/'>
             <button type='submit' class='btn btn-success'>See All Contacts</button>
         </form>
