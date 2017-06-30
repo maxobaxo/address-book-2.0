@@ -1,7 +1,8 @@
 <?php
     class Contact {
-        private $first_name;
         private $last_name;
+        private $first_name;
+        private $mid_init;
         private $street_num;
         private $city;
         private $state;
@@ -9,10 +10,11 @@
         private $mobile;
         private $email;
 
-        function __construct($first_name, $last_name, $street_num, $city, $state, $zip, $mobile, $email)
+        function __construct($last_name, $first_name, $mid_init, $street_num, $city, $state, $zip, $mobile, $email)
         {
-            $this->first_name = $first_name;
             $this->last_name = $last_name;
+            $this->first_name = $first_name;
+            $this->mid_init = $mid_init;
             $this->street_num = $street_num;
             $this->city = $city;
             $this->state = $state;
@@ -39,6 +41,16 @@
         function getLastName()
         {
             return $this->last_name;
+        }
+
+        function setMidInit($mid_init)
+        {
+            $this->mid_init = (string) $mid_init;
+        }
+
+        function getMidInit()
+        {
+            return $this->mid_init;
         }
 
         function setStreet($street_num)

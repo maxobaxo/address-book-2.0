@@ -5,16 +5,18 @@
 </head>
 <body>
     <div class='container'>
-        <h1>Address Book</h1>
-            <h2>You have added a new contact!</h2>
-            <h3> {{ new_contact.getLastName }}, {{ new_contact.getFirstName }} </h3>
-            <p>
-                Address: <br>
-                {{ new_contact.getStreet }} <br>
-                {{ new_contact.getCity }}, {{ new_contact.getState }} | {{ new_contact.getZip }} <br>
-                Mobile: {{ new_contact.getEmail }} <br>
-                Email: {{ new_contact.getEmail }}
-            </p>
+        <div class="jumbotron">
+            <h1>Address Book</h1>
+        </div>
+        <h2>You have added a new contact!</h2>
+        <h3> {{ new_contact.getLastName }}, {{ new_contact.getFirstName }} {{ new_contact.getMidInit }} </h3>
+        <p>
+            Address: <br>
+            {{ new_contact.getStreet }} <br>
+            {{ new_contact.getCity }}, {{ new_contact.getState }} | {{ new_contact.getZip }} <br>
+            Mobile: {{ new_contact.Mobile }} <br>
+            Email: {{ new_contact.getEmail }}
+        </p>
         <form action='/'>
             <button type='submit' class='btn'>See All Contacts</button>
         </form>
