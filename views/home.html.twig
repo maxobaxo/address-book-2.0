@@ -40,22 +40,25 @@
                 <label for='email'>Email Address: </label>
                 <input type='text' name='email' class='form-control' id='email'>
             </div>
-            <button type='submit' class='btn'>Add</button>
+            <button type='submit' class='btn btn-info'>Add</button>
         </form>
         <form action='/delete_contacts' method='post'>
-            <button type='submit' name='btn'>Delete All Contacts!</button>
+            <button type='submit' class='btn btn-danger'>Delete All Contacts!</button>
         </form>
 
         {% if contacts is not empty %}
             <h2>Contacts:</h2>
             {% for contact in contacts %}
-                <h3> {{ contact.getLastName }}, {{ contact.getFirstName }} </h3>
-                <p>
-                    Address: {{ contact.getStreet }} <br>
-                    {{ contact.getCity }}, {{ contact.getState }} | {{ contact.getZip }} <br>
-                    Mobile: {{ contact.getEmail }} <br>
-                    Email: {{ contact.getEmail }}
-                </p>
+                <form action="/update" method="post">
+                    <h3> {{ contact.getLastName }}, {{ contact.getFirstName }} </h3>
+                    <p>
+                        <em>Address:</em> <br> {{ contact.getStreet }} <br>
+                        {{ contact.getCity }}, {{ contact.getState }} | {{ contact.getZip }} <br>
+                        <em>Mobile:</em> {{ contact.getEmail }} <br>
+                        <em>Email:</em> {{ contact.getEmail }}
+                    </p>
+                    <button type="submit" class="btn">Edit</button>
+                </form>
             {% endfor %}
         {% endif %}
     </div>

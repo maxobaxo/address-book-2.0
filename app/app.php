@@ -5,8 +5,8 @@
 
     session_start();
 
-    if (empty($_SESSION['contacts'])) {
-        $_SESSION['contacts'] = array();
+    if (empty($_SESSION['list_of_contacts'])) {
+        $_SESSION['list_of_contacts'] = array();
     }
 
     $app = new Silex\Application();
@@ -14,7 +14,9 @@
     ));
 
     $app->get('/', function() use ($app) {
-        return $app['twig']->render('home.html.twig', array('contacts' => Contact::getAll()));
+        $all_contacts = Contact::getAll();
+        sort($all_contacts);
+        return $app['twig']->render('home.html.twig', array('contacts' => $all_contacts));
     });
 
     $app->post('/create_contact', function() use ($app) {
