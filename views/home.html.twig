@@ -64,6 +64,7 @@
                                     {{ contact.getCity }}, {{ contact.getState }} | {{ contact.getZip }} <br>
                                     <em>Mobile:</em> {{ contact.getMobile }} <br>
                                     <em>Email:</em> {{ contact.getEmail }}
+                                    <input hidden="true" name="edit_contact" value="{{ contact.getIndex() }}">
                                 </p>
                                 <button type='submit' class='btn'>Edit</button>
                             </form>

@@ -121,17 +121,17 @@
 
         function save()
         {
-            array_push($_SESSION['contacts'], $this);
+            array_push($_SESSION['list_of_contacts'], $this);
         }
 
         static function getAll()
         {
-            return $_SESSION['contacts'];
+            return $_SESSION['list_of_contacts'];
         }
 
         static function deleteAll()
         {
-            $_SESSION['contacts'] = array();
+            $_SESSION['list_of_contacts'] = array();
         }
     }
 ?>

@@ -1,7 +1,7 @@
 <?php
     date_default_timezone_set('America/Los_Angeles');
     require_once __DIR__.'/../vendor/autoload.php';
-    require_once __DIR__.'/../src/Class.php';
+    require_once __DIR__.'/../src/Contact.php';
 
     session_start();
 
@@ -18,7 +18,6 @@
         sort($all_contacts);
         for ($i = 0; $i < count($all_contacts); $i++) {
             $all_contacts[$i]->setIndex($i);
-            var_dump($all_contacts[$i]->getFirstName());
         }
         return $app['twig']->render('home.html.twig', array('contacts' => $all_contacts));
     });
@@ -37,14 +36,16 @@
 
     $app->get('/update', function() use ($app) {
         $all_contacts = Contact::getAll();
-        for ($i = 0; $i < count($all_contacts); $i++) {
-            if ($i == $all_contacts[$i]->getIndex()) {
-                var_dump($all_contacts[$i]);
-            } else {
-                var_dump('lose lose lose');
-            }
-        }
-        return $app['twig']->render('update.html.twig');
+        sort($all_contacts);
+        $edit_contact_index = $_GET['edit_contact'];
+        $edit_contact = $all_contacts[$edit_contact_index];
+
+        // for ($i = 0; $i < count($all_contacts); $i++) {
+        //     if ($all_contacts[$i]->getIndex() == $edit_contact_index) {
+        //         $edit_contact = $all_contacts[$i];
+        //     }
+        // }
+        return $app['twig']->render('update.html.twig', array('edit_contact' => $edit_contact));
     });
 
     return $app;
