@@ -5,67 +5,67 @@
   </head>
   <body>
     <div class='container'>
-        <div class='jumbotron'>
-            <h1>Address Book</h1>
+      <div class='jumbotron'>
+        <h1>Address Book</h1>
+      </div>
+      <h2>Add a new contact below:</h2>
+      <form action='/create_contact' method='post'>
+        <div class='row'>
+          <div class='col-md-4'>
+            <div class='form-group'>
+              <input type='text' name='first_name' placeholder='First Name' class='form-control' id='first_name'>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class='form-group'>
+              <input type='text' name='mid-init' placeholder='Middle Initial' class='form-control' id='mid-init'>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class='form-group'>
+              <input type='text' name='last_name' placeholder='Last Name' class='form-control' id='last_name'>
+            </div>
+          </div>
         </div>
-        <h2>Add a new contact below:</h2>
-        <form action='/create_contact' method='post'>
-            <div class='row'>
-              <div class='col-md-4'>
-                  <div class='form-group'>
-                      <input type='text' name='first_name' placeholder='First Name' class='form-control' id='first_name'>
-                  </div>
-              </div>
-              <div class="col-md-4">
-                <div class='form-group'>
-                  <input type='text' name='mid-init' placeholder='Middle Initial' class='form-control' id='mid-init'>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class='form-group'>
-                  <input type='text' name='last_name' placeholder='Last Name' class='form-control' id='last_name'>
-                </div>
-              </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class='form-group'>
+              <input type='text' name='street_num' placeholder='Street Number' class='form-control' id='street_num'>
             </div>
-            <div class="row">
-              <div class="col-md-4">
-                <div class='form-group'>
-                  <input type='text' name='street_num' placeholder='Street Number' class='form-control' id='street_num'>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class='form-group'>
-                  <input type='text' name='city' placeholder='City' class='form-control' id='city'>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class='form-group'>
-                  <input type='text' name='state' placeholder='State' class='form-control' id='state'>
-                </div>
-              </div>
+          </div>
+          <div class="col-md-4">
+            <div class='form-group'>
+              <input type='text' name='city' placeholder='City' class='form-control' id='city'>
             </div>
-            <div class="row">
-              <div class="col-md-4">
-                <div class='form-group'>
-                  <input type='text' name='zip' placeholder='Zip Code' class='form-control' id='zip'>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class='form-group'>
-                  <input type='text' name='mobile' placeholder='Mobile' class='form-control' id='mobile'>
-                </div>
-              </div>
-              <div class='col-md-4'>
-                <div class='form-group'>
-                  <input type='text' name='email' placeholder='Email Address' class='form-control' id='email'>
-                </div>
-              </div>
+          </div>
+          <div class="col-md-4">
+            <div class='form-group'>
+              <input type='text' name='state' placeholder='State' class='form-control' id='state'>
             </div>
-            <button type='submit' class='btn btn-info'>Add</button>
-        </form>
-        <form action='/delete_contacts' method='post'>
-            <button type='submit' class='btn btn-danger'>Delete All Contacts!</button>
-        </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class='form-group'>
+              <input type='text' name='zip' placeholder='Zip Code' class='form-control' id='zip'>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class='form-group'>
+              <input type='text' name='mobile' placeholder='Mobile' class='form-control' id='mobile'>
+            </div>
+          </div>
+          <div class='col-md-4'>
+            <div class='form-group'>
+              <input type='text' name='email' placeholder='Email Address' class='form-control' id='email'>
+            </div>
+          </div>
+        </div>
+        <button type='submit' class='btn btn-info'>Add</button>
+      </form>
+      <form action='/delete_contacts' method='post'>
+          <button type='submit' class='btn btn-danger'>Delete All Contacts!</button>
+      </form>
 
       {% if contacts is not empty %}
         <h2>Contacts:</h2>
@@ -74,8 +74,11 @@
             {% for contact in contacts %}
               <div class='well'>
                 <form action='/update' name='{{ contact.getIndex() }}'>
-                  <h3> {{ contact.getLastName }},
-                  {{ contact.getFirstName }} </h3>
+                  <h3>
+                    {{ contact.getLastName }},
+                    {{ contact.getFirstName }}
+                    {{ contact.getMidInit }}
+                  </h3>
                   <p>
                     <em>Address:</em> <br>
                     {{ contact.getStreet }} <br>
