@@ -65,7 +65,8 @@
         <input hidden='true' name='edited_contact' value='{{ edit_contact.getIndex }}'>
         <button type='submit' class='btn btn-info'>Save Edits</button>
       </form>
-      <form action='/single_delete' method='post'>
+      <form action='/single_delete'>
+        <input hidden='true' name='deleted_contact' value='{{ edit_contact.getIndex }}'>
         <button type="submit" class="btn btn-danger">Delete Contact!</button>
       </form>
     </div>

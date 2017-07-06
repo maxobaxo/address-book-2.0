@@ -78,10 +78,19 @@
           $edited_contact->setMobile($_GET['new_mobile']);
         }
 
-        var_dump("NEW LAST NAME: ");
-        var_dump($edited_contact->getLastName());
-
         return $app['twig']->render('update_confirmed.html.twig', array('edited_contact' => $edited_contact));
+    });
+
+    $app->get('/single_delete', function() use ($app) {
+        $all_contacts = Contact::getAll();
+        sort($all_contacts);
+        $deleted_contact_index = $_GET['deleted_contact'];
+
+        var_dump($all_contacts);
+        unset($all_contacts[$deleted_contact_index]);
+        var_dump($all_contacts);
+
+        return $app['twig']->render('single_delete.html.twig');
     });
 
     return $app;
