@@ -78,10 +78,10 @@
           $edited_contact->setMobile($_GET['new_mobile']);
         }
 
-        var_dump("NEW contact: ");
-        var_dump($edited_contact);
+        var_dump("NEW LAST NAME: ");
+        var_dump($edited_contact->getLastName());
 
-        return $app['twig']->render('update_confirmed.html.twig', array('edited_contact', $edited_contact));
+        return $app['twig']->render('update_confirmed.html.twig', array('edited_contact' => $edited_contact));
     });
 
     return $app;
