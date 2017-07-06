@@ -15,6 +15,7 @@
             $this->last_name = $last_name;
             $this->first_name = $first_name;
             $this->mid_init = $mid_init;
+            // $this->full_name = $first_name . $mid_init . $last_name;
             $this->street_num = $street_num;
             $this->city = $city;
             $this->state = $state;

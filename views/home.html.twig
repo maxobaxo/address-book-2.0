@@ -73,7 +73,7 @@
           <div class='col-md-12'>
             {% for contact in contacts %}
               <div class='well'>
-                <form action='/update' name='{{ contact.getIndex() }}'>
+                <form action='/update'>
                   <h3>
                     {{ contact.getLastName }},
                     {{ contact.getFirstName }}
@@ -87,7 +87,7 @@
                     {{ contact.getZip }} <br>
                     <em>Mobile:</em> {{ contact.getMobile }} <br>
                     <em>Email:</em> {{ contact.getEmail }}
-                    <input hidden="true" name="edit_contact" value="{{ contact.getIndex() }}">
+                    <input hidden="true" name="edit_contact" value="{{ contact.getIndex }}">
                   </p>
                   <button type='submit' class='btn'>Edit</button>
                 </form>

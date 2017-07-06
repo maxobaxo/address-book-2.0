@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+    <title>Address Book: Edit Confirmed</title>
+  </head>
+  <body>
+    <div class='container'>
+      <div class="jumbotron">
+        <h1>Address Book</h1>
+      </div>
+      <h2>The following contact has been edited!</h2>
+      <h3>
+          {{ edited_contact.getLastName }},
+          {{ edited_contact.getMidInit }}
+          {{ edited_contact.getFirstName }}
+      </h3>
+      <p>
+        Address: <br>
+          {{ edited_contact.getStreet }} <br>
+          {{ edited_contact.getCity }},
+          {{ edited_contact.getState }} |
+          {{ edited_contact.getZip }} <br>
+          Mobile: {{ edited_contact.Mobile }} <br>
+          Email: {{ edited_contact.getEmail }}
+      </p>
+
+      <form action='/'>
+        <button type='submit' class='btn btn-success'>Start Over</button>
+      </form>
+    </div>
+  </body>
+</html>
